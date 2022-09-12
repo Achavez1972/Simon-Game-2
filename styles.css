@@ -1,0 +1,113 @@
+body {
+  text-align: center;
+  background-color: #011F3F;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  color: #FEF2BF;
+}
+
+a {
+  color: #FEF2BF;
+}
+
+#title {
+  color: white;
+  font-size: 82px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  font-family: 'Yellowtail';
+}
+
+p {
+  color: white;
+  font-size: 16px;
+  font-family: 'Oswald';
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-align: center;
+  position: relative;
+  top: -10px;
+}
+
+#level {
+  margin-top: 5px;
+  color: white;
+  text-align: center;
+  font-family: 'Oswald';
+  font-size: 40px;
+}
+
+footer {
+  margin: 10% 0 2% 3%;
+}
+
+.instructions {
+  width: 95%;
+  font-size: 1.5rem;
+  padding: 4% 3%;
+  line-height: 2rem;
+  text-align: left;
+}
+
+#gameBoard {
+  width: 600px;
+  height: 600px;
+  border-radius: 30%;
+  border: 16px solid #fff;
+  margin: 100px auto;
+  position: relative;
+  box-shadow: 0px 0px 150px #333;
+}
+
+#middleCircle {
+  height: 300px;
+  width: 300px;
+  background-color: #333;
+  position: absolute;
+  left: 150px;
+  border-radius: 50%;
+  top: 150px;
+  z-index: 100;
+  box-shadow: 0px 0px 55px #000;
+  cursor: pointer;
+}
+
+.square {
+  width: 300px;
+  height: 300px;
+  float: left;
+}
+
+#red {
+  background: -webkit-linear-gradient(left top, red, #FF7979);
+  background: -o-linear-gradient(bottom right, red, #FF7979);
+  background: -moz-linear-gradient(bottom right, red, #FF7979);
+  background: linear-gradient(to bottom right, red, #FF7979);
+  border-radius: 30% 0 0 0;
+}
+
+#blue {
+  background: -webkit-linear-gradient(right top, blue, #A6A6FF);
+  background: -o-linear-gradient(bottom left, blue, #A6A6FF);
+  background: -moz-linear-gradient(bottom left, blue, #A6A6FF);
+  background: linear-gradient(to bottom left, blue, #A6A6FF);
+  border-radius: 0 30% 0 0;
+}
+
+#green {
+  background: -webkit-linear-gradient(left bottom, green, #00FF00);
+  background: -o-linear-gradient(top right, green, #00FF00);
+  background: -moz-linear-gradient(top right, green, #00FF00);
+  background: linear-gradient(to top right, green, #00FF00);
+  border-radius: 0 0 0 30%;
+}
+
+#yellow {
+  background: -webkit-linear-gradient(right bottom, yellow, #FFFF95);
+  background: -o-linear-gradient(top left, yellow, #FFFF95);
+  background: -moz-linear-gradient(top left, yellow, #FFFF95);
+  background: linear-gradient(to top left, yellow, #FFFF95);
+  border-radius: 0 0 30% 0;
+}
