@@ -15,10 +15,7 @@ function addPattern() {
 
 function playPattern() {
   // takes pattern array
-  for (let i = 0; i < pattern.length; i++) {
-    let delayTime = i * 800;
-    setTimeout(flashSquare, delayTime);
-  }
+  pattern.forEach((_, i) => window.setTimeout(flashSquare, i*600));
 }
 
 function flashSquare() {
