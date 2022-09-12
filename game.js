@@ -103,7 +103,6 @@ function removeClicks() {
   //removes all events from element
   $(".square").unbind();
 }
-let name = prompt("Your name?")
 
 function startGame() {
   removeClicks();
@@ -111,7 +110,6 @@ function startGame() {
   addPattern();
   addPattern();
   playPattern();
-  $("h1").html(`${name}`);
   $("p").html("Repeat the secuence of colours").css({
     fontSize: 20,
     marginBottom: 15,
