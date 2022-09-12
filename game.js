@@ -1,5 +1,5 @@
 let pattern = [];
-let usedPattern = [];
+let previousPattern = [];
 let level = 0;
 let gameCheck = false;
 
@@ -14,8 +14,15 @@ function addPattern() {
 }
 
 function playPattern() {
-  // takes pattern array
-  pattern.forEach((_, i) => window.setTimeout(flashSquare, i*600));
+
+  if (level <= 3) {
+    pattern.forEach((_, i) => window.setTimeout(flashSquare, i * 1000));
+  } else if (level > 3 && level <= 7) {
+    pattern.forEach((_, i) => window.setTimeout(flashSquare, i * 800));
+  } else {
+    pattern.forEach((_, i) => window.setTimeout(flashSquare, i * 600));
+  }
+
 }
 
 function flashSquare() {
@@ -34,23 +41,27 @@ function flashSquare() {
       },
       100
     );
-
+  $("p").html("Simon's turn");
   //animation takes 300 ms
   playSound(item);
 
-  usedPattern.push(item);
+  previousPattern.push(item);
   // take the item  removed from pattern and add it to used pattern
 
   if (pattern.length <= 0) {
     // add the click event once cpu is finished showing the pattern
     createClicks();
+
+    $("p").html("Your turn");
+
+    setTimeout(2000);
   }
 } // end flashSquare()
 
 function createClicks() {
   $(".square").click(function() {
     // check if clicked element is the right square
-    let item = usedPattern.shift();
+    let item = previousPattern.shift();
 
 
     let squareId = $(this).attr("id");
@@ -67,7 +78,7 @@ function createClicks() {
       //adds item back to pattern array
       pattern.push(item);
 
-      if (usedPattern.length <= 0) {
+      if (previousPattern.length <= 0) {
         level++;
         $("#level").html("Level: " + level);
 
@@ -77,7 +88,7 @@ function createClicks() {
         addPattern();
 
         // playPattern();
-        setTimeout(playPattern, 800);
+        setTimeout(playPattern, 1000);
       }
     } else {
       // else game over
@@ -91,7 +102,7 @@ function createClicks() {
       $("p").html("Click anywhere on circle to Restart");
       // clear out pattern arrays
       pattern = [];
-      usedPattern = [];
+      previousPattern = [];
     }
   }); // end .square click
 } // end create click
@@ -100,6 +111,7 @@ function removeClicks() {
   //removes all events from element
   $(".square").unbind();
 }
+
 
 function startGame() {
   removeClicks();
